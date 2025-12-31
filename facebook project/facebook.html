@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>KhanBook</title>
+	<link rel="stylesheet" type="text/css" href="facebook.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<style>
+	*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body{
+	background: #efefef;
+	font-family: sans-serif;
+}
+.navbar{
+	width: 100%;
+	height: 50px;
+	background: #1876f2;
+	/*justify-content: space-between;*/
+	display: flex;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+.navbar img{
+	height: 30px;
+	width: 30px;
+	padding: 0;
+	margin-left: 40px;
+	margin-top: 13px;
+}
+.navbar .my-pic{
+	border-radius: 20px;
+	width: 40px;
+	height: 40px;
+	margin: 0;
+	margin: 6px 40px;
+}
+.srch-box{
+	float: right;
+	margin-left: 500px;
+	height: 35px;
+	width: 300px;
+	border-radius: 20px;
+	outline: none;
+	border: 5px solid #efefef;
+	background: #efefef;
+	display: flex;
+	align-items: center;
+	margin-top: 8px;
+	padding: 0 -20px;	
+}
+.srch-box img{
+	width: 18px;
+	height: 18px;
+	margin-bottom: 9px;
+}
+.srch-box input{
+	width: 100%;
+	background: transparent;
+	padding: 10px;
+	outline: none;
+	border: 0;
+	font-family: monospace;
+}
+.navbar p{
+	font-family: sans-serif;
+	font-size: 25px;
+	font-weight: bold;
+    padding: 13px;
+    padding-left: 50px;
+}
+.navbar p span{
+	background: #efefef;
+	color: #1876f2;
+	border-radius: 5px  ;
+	padding: 2px;
+}
+.online{
+	position: relative;
+}
+.my-pic{
+	margin-top: -10px;
+}
+.online:after{
+	content: '';
+	width: 7px;
+	height: 7px;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	background: #41db51;
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-right: 38px;
+	margin-top: 5px;
+}
+.container{
+	display: flex;
+	justify-content: space-between;
+	padding: 13px 5%;
+}
+.left-sidebar{
+	background: transparent;
+	flex-basis: 25%;
+	position: sticky;
+	top: 70px;
+	align-self: flex-start;	
+}
+.right-sidebar{
+	background: transparent;
+	flex-basis: 25%;
+	position: sticky;
+	top: 70px;
+	align-self: flex-start;
+	background: #fff;
+	padding: 20px;
+	border-radius: 4px;
+	color: #626262;
+}
+.main-sidebar{
+	flex-basis: 47%;
+}
+.imp-links a,.imp-shortcuts a{
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	color: #626262;
+	width: fit-content;
+}
+.imp-links a img,.imp-shortcuts a img{
+	width: 25px;
+	margin-right: 15px;
+}
+.imp-links li,.imp-shortcuts li{
+	list-style: none;
+	margin-top: 30px;
+}
+.seemore{
+	height: 90px;
+}
+.seemore p{
+	color: #1876f2;
+	margin-top: px;
+}
+.line{
+	height: 2px;
+	width: 100%;
+	color: green;
+}
+.imp-links{
+	border-bottom: 2px solid #ccc;
+}
+.imp-shortcuts img{
+	border-radius: 5px;
+}
+.imp-shortcuts p{
+	margin-top: 25px 0px;
+	color: #626262;
+	font-weight: 500;
+	margin-top: 10px;
+}
+.sidebar-title{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 18px;
+}
+.sidebar-title h4{
+	font-weight: 600;
+	font-size: 16px;
+}
+.sidebar-title a{
+	text-decoration: none;
+	color: #1876f2;
+	font-size: 12px;
+}
+.events{
+	display: flex;
+	font-size: 14px;
+	margin-bottom: 20px;
+}
+.left-events{
+	border-radius: 10px;
+	height: 65px;
+	width: 65px;
+	margin-right: 15px;
+	padding-top: 10px;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.left-events p{
+	margin-top: 19px;
+	background: #1876f2;
+	color: #fff;
+	height: 100%;
+}
+.left-events h5{
+	font-size: 16px;
+	font-weight: bolder;
+}
+.right-events a{
+	text-decoration: none;
+	font-weight: bold;
+} 
+.advert-title{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 18px;
+}
+.advert-title a{
+	font-size: 12px;
+	text-decoration: none;
+}
+.advert img{
+	width: 100%;
+	margin-bottom: 20px;
+	border-radius: 4px;
+}
+.chat-title{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 18px;
+}
+.chat-title a{
+	font-size: 12px;
+	text-decoration: none;
+}
+.online img{
+	width: 35px;
+	height: 35px;
+	border-radius: 50px;
+}
+.online-list{
+	align-items: center;
+	margin-top: -10px;
+
+	
+}
+.online-list .online{
+	display: flex;
+	margin-top: 20px;
+	text-align: center;
+	align-items: center;
+}
+.online-list .online:after{
+	margin-right: 228px;
+	margin-top: 25px;
+}
+
+.story-gallery{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+.story{
+	flex-basis: 18%;
+	padding-top: 32%;
+	background-image:linear-gradient(transparent,rgba(0, 0, 0, 0.5)), url(file:///D:/html%20and%20CSS/Document/project/eduford_img/download1.jpeg.jpeg.jpeg);
+	background-position: right;
+	background-size: cover;
+	border-radius: 10px;
+	position: relative;
+}
+.story img{
+	position:absolute ;
+	width: 45px;
+	border-radius: 50%;
+	top: 10px;
+	left: 10px;
+	border-radius: 5px solid #626262;
+}
+.story p{
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	font-size: 14px ;
+}
+.story1 img{
+     border: 3px solid #1876f2;
+}
+#story1 img{
+	border: 3px solid #626262;
+}
+#story2{
+	background: linear-gradient(transparent,rgba(0, 0, 0, 0.5)),url(file:///D:/html%20and%20CSS/Document/project/images/status-5.png);	
+	background-size: cover;
+
+}
+#story3{
+	background: linear-gradient(transparent,rgba(0, 0, 0, 0.5)),url(file:///D:/html%20and%20CSS/Document/project/images/status-4.png);
+	background-size: cover;
+}
+#story4{
+	background: linear-gradient(transparent,rgba(0, 0, 0, 0.5)),url(file:///D:/html%20and%20CSS/Document/project/images/status-2.png);
+	background-size: cover;
+}
+#story5{
+	background: linear-gradient(transparent,rgba(0, 0, 0, 0.5)),url(file:///D:/html%20and%20CSS/Document/project/images/status-1.png);
+	background-size: cover;
+}
+.Container{
+	width: 100%;
+	background: #fff;
+	border-radius: 6px;
+	padding: 20px;
+	color: #626262;
+}
+.user-profile{
+	display: flex;
+	align-items: center;
+}
+.user-profile img{
+	width: 45px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+.user-profile p{
+	margin-bottom: -2px;
+	font-weight: 600;
+	color: #626262;
+}
+.user-profile small{
+	font-size: 12px;
+
+}
+.input-container{
+	padding-left: 55px;
+	padding-top: 20px;
+
+}
+.input-container input{
+	margin-top: 30px;
+	border: none;
+	border-bottom: 2px solid #626262;
+	outline: none;
+	width: 460px;
+}
+.post-links{
+	display: flex;
+	margin-top: 10px;
+
+}
+.post-links a{
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	color: #626262;
+	margin-right: 30px;
+	font-size: 13px;
+}
+.post-links img{
+	width: 20px;
+	margin-right: 10px;
+}
+.post-container{
+	width: 100%;
+	background: #fff;
+	border-radius: 6px;
+	padding: 20px;
+	color: #626262;
+	margin: 20px 0;
+}
+.user-profile span{
+	font-size: 13px;
+	color: #626262 ;
+}
+.text{
+	color: #9a9a9a;
+	margin: 15px 0;
+	font-size: 15px;
+
+}
+.text a{
+	color: #1876f2;
+}
+.feed{
+	width: 100%;
+	border-radius: 4px;
+	margin-bottom: 5px;
+}
+.row{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.activity-icons{
+	display: flex;
+}
+.activity-icons div img{
+	width: 18px;
+	margin-right: 10px;
+
+}
+.activity-icons div{
+	display: inline-flex;
+	align-items: center;
+	margin-right: 30px;
+
+}
+.profile-icons{
+	display: flex;
+	align-items: center;
+}
+.profile-icons img{
+	width: 20px;
+	border-radius: 50%;
+	margin-right: 5px;
+}
+.row a{
+	color: #9a9a9a;
+}
+.load-btn{
+	display: block;
+	margin: auto;
+	cursor: pointer;
+	padding: 5px 10px;
+	border: 1px solid #9a9a9a;
+	color: #626262;
+	background: transparent;
+	border-radius: 4px;
+
+}
+.footer{
+	text-align: center;
+	color: #9a9a9a;
+	padding: 10px 0 20px;
+	font-size: 13px;
+}
+.settings{
+	position: absolute;
+	max-width: 330px;
+	height: 480px;
+	background: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+	border-radius: 4px;
+	overflow: hidden;
+	top: 108%;
+	right: 5%;
+	text-align: left;
+	max-height: 0;
+	transition:max-height 0.3s ;
+}
+.settings-height{
+	max-height: 480px;
+}
+.user-profile a{
+	font-size: 12px;
+	color: #1876f2;
+	text-decoration: none;
+}
+.setting-inner{
+	padding: 20px;
+}
+.setting-inner p{
+	display: block;
+	font-size: 20px;
+	text-align: center;
+	margin-right: 80px;
+	width: 100%;
+}
+.setting-inner a{
+	text-align: center;
+}
+.setting-inner img{
+	width: 40px;
+	height: 30px;
+
+}
+.settings hr{
+    border: 0;
+    height: 1px;
+    background: #9a9a9a;
+    margin: 15px 0;
+}
+.setting-links{
+	display: flex;
+	align-items: center;
+	margin: 15px 0;
+}
+.setting-links a{
+	display: flex;
+	flex: 1;
+	justify-content: space-between;
+	align-items: center;
+}
+.settings-pic{
+	margin: 7px 10px;
+}
+.my-pic:hover{
+	position: absolute;
+	max-width: 330px;
+	height: 480px;
+	background: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+	border-radius: 4px;
+	overflow: hidden;
+	top: 108%;
+	right: 5%;
+	text-align: left;
+}
+#dark-btn{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	background: #ccc;
+	width: 45px;
+	border-radius: 15px;
+	padding: 2px 3px;
+	cursor: pointer;
+
+}
+#dark-btn span{
+      width: 18px;
+      height: 18px;
+      background: #fff;
+      border-radius: 50%;
+      display: inline-block;
+}
+</style>
+<body>
+	<div class="navbar">
+		<p><span>K</span>hanBook</p>
+		<img src="file:///D:/html%20and%20CSS/Document/project/images/inbox.png"><img src="file:///D:/html%20and%20CSS/Document/project/images/notification.png">
+		<img src="file:///D:/html%20and%20CSS/Document/project/images/video.png">
+		<div class="srch-box">
+		<img src="file:///D:/html%20and%20CSS/Document/project/images/search.png">
+		<input class="srch" type="text" name="" placeholder="Search here">
+	    </div>
+	    <div class="online" onclick="settingsMenuToggle()" >	
+		<img class="my-pic" src="file:///D:/html%20and%20CSS/Document/project/eduford_img/download1.jpeg">
+	    </div>
+
+	    <div class="settings">
+	    	<div id="dark-btn">
+	    		<span></span>
+	    	</div>
+	    	<div class="setting-inner">
+	    		<div class="user-profile">
+					<img src="file:///C:/Users/Mega%20Computers/Pictures/Saved%20Pictures/download1.jpeg">
+					<div>
+						<p>Dilawar Abbasi</p>
+						<a href="#">See Your Profile</a>
+					</div>
+			</div>
+			<hr>
+			<div class="user-profile">
+					<img src="file:///D:/html%20and%20CSS/Document/project/images/feedback.png">
+					<div>
+						<p>Give Feedback</p>
+						<a href="#">Help us to improve the new design</a>
+					</div>
+			</div>
+			<hr>
+
+			<div class="setting-links">
+				<img src="file:///D:/html%20and%20CSS/Document/project/images/setting.png" class="settings-pic">
+				<a style="text-decoration: none;color: #9a9a9a;" href="#">Settings & Privacy <img style="margin-left: 8px;height: 10px; width: 9px;color: #626262;" class="arrow" src="file:///D:/html%20and%20CSS/Document/project/images/arrow.png" width="7px" ></a>
+			</div>
+			<div class="setting-links">
+				<img src="file:///D:/html%20and%20CSS/Document/project/images/help.png" class="settings-pic">
+				<a style="text-decoration: none;color: #9a9a9a;" href="#">Help & Support <img style="margin-left: 8px;height: 10px; width: 9px;color: #626262;" class="arrow" src="file:///D:/html%20and%20CSS/Document/project/images/arrow.png" width="7px" ></a>
+			</div>
+			<div class="setting-links">
+				<img src="file:///D:/html%20and%20CSS/Document/project/images/display.png" class="settings-pic">
+				<a style="text-decoration: none;color: #9a9a9a;" href="#">Display & Accessibility <img style="margin-left: 8px;height: 10px; width: 9px;color: #626262;" class="arrow" src="file:///D:/html%20and%20CSS/Document/project/images/arrow.png" width="7px" ></a>
+			</div>
+			<div class="setting-links">
+				<img src="file:///D:/html%20and%20CSS/Document/project/images/logout.png" class="settings-pic">
+				<a style="text-decoration: none;color: #9a9a9a;" href="#"> Logout <img style="margin-left: 8px;height: 10px; width: 9px;color: #626262;" class="arrow" src="file:///D:/html%20and%20CSS/Document/project/images/arrow.png" width="7px" ></a>
+			</div>
+	       </div>
+	    	
+	    </div>
+	</div>
+
+
+	<div class="container">
+		<div class="left-sidebar">
+			<div class="imp-links">
+				<ul>
+				<li><a href="#"><img src="file:///D:/html%20and%20CSS/Document/project/images/news.png">Latest News</a></li>
+				<li><a href="#"><img src="file:///D:/html%20and%20CSS/Document/project/images/friends.png">Friends</a></li>
+				<li><a href="#"><img src="file:///D:/html%20and%20CSS/Document/project/images/group.png">Group</a></li>
+				<li><a href="#"><img src="file:///D:/html%20and%20CSS/Document/project/images/marketplace.png">MarketPlace</a></li>
+				<li><a href="#"><img src="file:///D:/html%20and%20CSS/Document/project/images/watch.png">Watch</a></li>
+				<a class="seemore" href="#"><p>See More</p></a>
+			    </ul>
+			</div>
+			<div class="imp-shortcuts">
+				<p>Your Shortcuts</p>
+				<ul>
+					<li><a href="#"><img src="file:///D:/html%20and%20CSS/Document/project/images/shortcut-1.png">Web Developers</a></li>
+					<li><a href="#"><img src="file:///D:/html%20and%20CSS/Document/project/images/shortcut-2.png">Web Design Course</a></li>
+					<li><a href="#"><img src="file:///D:/html%20and%20CSS/Document/project/images/shortcut-3.png">Full Stack Development</a></li>
+					<li><a href="#"><img src="file:///D:/html%20and%20CSS/Document/project/images/shortcut-4.png">Website Experts</a></li>
+				</ul>
+			</div>
+		</div>
+
+
+
+		<div class="main-sidebar">
+			<div class="story-gallery">
+				<div class="story">
+					<img src="file:///D:/html%20and%20CSS/Document/project/images/upload.png">
+					<p>Post Story</p>
+				</div>
+				<div class="story story1" id="story2">
+					<img src="file:///D:/html%20and%20CSS/Document/project/images/member-5.png">
+					<p>Alison John</p>
+				</div>
+				<div class="story story1" id="story3">
+					<img src="file:///D:/html%20and%20CSS/Document/project/images/member-1.png">
+					<p>Fozan Khan</p>
+				</div>
+				<div class="story story1" id="story4" id="story4">
+					<img src="file:///D:/html%20and%20CSS/Document/project/images/member-3.png">
+					<p>Donald Trump</p>
+				</div>
+				<div class="story story1" id="story5">
+					<img src="file:///D:/html%20and%20CSS/Document/project/images/member-7.png">
+					<p>Micheal Jack</p>
+				</div>
+			</div>
+
+			<div class="Container">
+				<div class="user-profile">
+					<img src="file:///D:/html%20and%20CSS/Document/project/eduford_img/download1.jpeg">
+					<div>
+						<p>Dilawar Abbasi</p>
+						<small>Public<i class="fa fa-caret-down" aria-hidden="true"></i></small>
+					</div>
+				</div>
+
+				<div class="input-container">
+					<p>What's on your mind,Dilawar?</p>
+					<input type="text" name="" >
+
+					<div class="post-links">
+						<a href="#"><img src="file:///D:/html%20and%20CSS/Document/project/images/live-video.png">Live Video</a>
+						<a href="#"><img src="file:///D:/html%20and%20CSS/Document/project/images/photo.png">Photo/Video</a>
+						<a href="#"><img src="file:///D:/html%20and%20CSS/Document/project/images/feeling.png">Feeling/Activity</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="post-container">
+				<div class="row">
+					<div class="user-profile">
+					<img src="file:///D:/html%20and%20CSS/Document/project/eduford_img/download1.jpeg">
+					<div>
+						<p>Dilawar Abbasi</p>
+						<span>June 13,2021 at 13:40pm</span>
+					</div>
+				    </div>
+				    <a href="#"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
+				</div>
+				
+				<p class="text">I will make website like facebook by using HTML and CSS.<a href="#">#KhanBook</a></p>
+				<img class="feed" src="file:///D:/html%20and%20CSS/Document/project/images/feed-image-1.png">
+
+				<div class="row">
+					<div class="activity-icons">
+						<div><img src="file:///D:/html%20and%20CSS/Document/project/images/like-blue.png">120K</div>
+						<div><img src="file:///D:/html%20and%20CSS/Document/project/images/comments.png">20K</div>
+						<div><img src="file:///D:/html%20and%20CSS/Document/project/images/share.png">1.5K</div>
+					</div>
+					<div class="profile-icons">
+						<img src="file:///C:/Users/Mega%20Computers/Pictures/Saved%20Pictures/download1.jpeg"><i class="fa fa-caret-down" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="post-container">
+				<div class="row">
+					<div class="user-profile">
+					<img src="file:///D:/html%20and%20CSS/Document/project/eduford_img/download1.jpeg">
+					<div>
+						<p>Dilawar Abbasi</p>
+						<span>Wednesday at 2:03pm</span>
+					</div>
+				    </div>
+				    <a href="#"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
+				</div>
+				
+				<p class="text">I will make website like facebook by using HTML and CSS.Making websites is very interesting and easy work.<a href="#">#KhanBook</a></p>
+				<img class="feed" src="file:///D:/html%20and%20CSS/Document/project/images/feed-image-2.png">
+
+				<div class="row">
+					<div class="activity-icons">
+						<div><img src="file:///D:/html%20and%20CSS/Document/project/images/like.png">50</div>
+						<div><img src="file:///D:/html%20and%20CSS/Document/project/images/comments.png">100k</div>
+						<div><img src="file:///D:/html%20and%20CSS/Document/project/images/share.png">32</div>
+					</div>
+					<div class="profile-icons">
+						<img src="file:///C:/Users/Mega%20Computers/Pictures/Saved%20Pictures/download1.jpeg"><i class="fa fa-caret-down" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="post-container">
+				<div class="row">
+					<div class="user-profile">
+					<img src="file:///D:/html%20and%20CSS/Document/project/eduford_img/download1.jpeg">
+					<div>
+						<p>Dilawar Abbasi</p>
+						<span>November 21,2020 at 12:40pm</span>
+					</div>
+				    </div>
+				    <a href="#"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
+				</div>
+				
+				<p class="text"><a href="#">#Ibrahim Khan Abbasi</a>       <a href="#">#Cuteness-Overloaded</a>.      <a href="#">#KhanBook</a></p>
+				<img class="feed" src="file:///D:/html%20and%20CSS/Document/project/images/ibrahim.jpg">
+
+				<div class="row">
+					<div class="activity-icons">
+						<div><img src="file:///D:/html%20and%20CSS/Document/project/images/like-blue.png">5M</div>
+						<div><img src="file:///D:/html%20and%20CSS/Document/project/images/comments.png">200K</div>
+						<div><img src="file:///D:/html%20and%20CSS/Document/project/images/share.png">3.2K</div>
+					</div>
+					<div class="profile-icons">
+						<img src="file:///C:/Users/Mega%20Computers/Pictures/Saved%20Pictures/download1.jpeg"><i class="fa fa-caret-down" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="post-container">
+				<div class="row">
+					<div class="user-profile">
+					<img src="file:///D:/html%20and%20CSS/Document/project/eduford_img/download1.jpeg">
+					<div>
+						<p>Dilawar Abbasi</p>
+						<span>Yesterday at 00:30pm</span>
+					</div>
+				    </div>
+				    <a href="#"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
+				</div>
+				
+				<p class="text">I will make website like facebook by using HTML and CSS.Making websites is very interesting and easy work.Leave your reply about this website.<a href="#">#Dilawar Khan</a>.<a href="#">#KhanBook</a></p>
+				<img class="feed" src="file:///D:/html%20and%20CSS/Document/project/images/feed-image-3.png">
+
+				<div class="row">
+					<div class="activity-icons">
+						<div><img src="file:///D:/html%20and%20CSS/Document/project/images/like.png">56K</div>
+						<div><img src="file:///D:/html%20and%20CSS/Document/project/images/comments.png">20K</div>
+						<div><img src="file:///D:/html%20and%20CSS/Document/project/images/share.png">3K</div>
+					</div>
+					<div class="profile-icons">
+						<img src="file:///C:/Users/Mega%20Computers/Pictures/Saved%20Pictures/download1.jpeg"><i class="fa fa-caret-down" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="post-container">
+				<div class="row">
+					<div class="user-profile">
+					<img src="file:///D:/html%20and%20CSS/Document/project/eduford_img/download1.jpeg">
+					<div>
+						<p>Dilawar Abbasi</p>
+						<span>August 2,2019 at 00:30pm</span>
+					</div>
+				    </div>
+				    <a href="#"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
+				</div>
+				
+				<p class="text">I will make website like facebook by using HTML and CSS.Making websites is very interesting and easy work.Leave your reply about this website.<a href="#">#Dilawar Khan</a>.<a href="#">#KhanBook</a></p>
+				<img class="feed" src="file:///D:/html%20and%20CSS/Document/project/images/feed-image-4.png">
+
+				<div class="row">
+					<div class="activity-icons">
+						<div><img src="file:///D:/html%20and%20CSS/Document/project/images/like-blue.png">5K</div>
+						<div><img src="file:///D:/html%20and%20CSS/Document/project/images/comments.png">2K</div>
+						<div><img src="file:///D:/html%20and%20CSS/Document/project/images/share.png">1</div>
+					</div>
+					<div class="profile-icons">
+						<img src="file:///C:/Users/Mega%20Computers/Pictures/Saved%20Pictures/download1.jpeg"><i class="fa fa-caret-down" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="post-container">
+				<div class="row">
+					<div class="user-profile">
+					<img src="file:///D:/html%20and%20CSS/Document/project/eduford_img/download1.jpeg">
+					<div>
+						<p>Dilawar Abbasi</p>
+						<span>August 30,2019 at 16:30pm</span>
+					</div>
+				    </div>
+				    <a href="#"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
+				</div>
+				
+				<p class="text">I will make website like facebook by using HTML and CSS.Making websites is very interesting and easy work.Leave your reply about this website.<a href="#">#Dilawar Khan</a>.<a href="#">#KhanBook</a></p>
+				<img class="feed" src="file:///D:/html%20and%20CSS/Document/project/images/feed-image-5.png">
+
+				<div class="row">
+					<div class="activity-icons">
+						<div><img src="file:///D:/html%20and%20CSS/Document/project/images/like.png">34k</div>
+						<div><img src="file:///D:/html%20and%20CSS/Document/project/images/comments.png">2K</div>
+						<div><img src="file:///D:/html%20and%20CSS/Document/project/images/share.png">1</div>
+					</div>
+					<div class="profile-icons">
+						<img src="file:///C:/Users/Mega%20Computers/Pictures/Saved%20Pictures/download1.jpeg"><i class="fa fa-caret-down" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+
+
+			<button type="button" class="load-btn">Load More</button>
+
+			
+		</div>
+
+
+
+
+
+		<div class="right-sidebar">
+			<div class="sidebar-title">
+				<h4>Event</h4>
+			    <a href="#">See More</a>
+			</div>
+
+			<div class="events">
+				<div class="left-events">
+					<h5>18</h5>
+					<p>June</p>
+				</div>
+				<div class="right-events">
+					<h3>Social Media</h3>
+					<p><img style="width:12px;height: 15px;" src="file:///D:/html%20and%20CSS/Document/project/images/location.png">Washington,Tech Park</p>
+					<a href="#">More Info</a>
+				</div>
+			</div>
+
+			<div class="events">
+				<div class="left-events">
+					<h5>22</h5>
+					<p>July</p>
+				</div>
+				<div class="right-events">
+					<h3>Online Marketing</h3>
+					<p><img style="width:12px;height: 15px;" src="file:///D:/html%20and%20CSS/Document/project/images/location.png">Washington,Tech Park</p>
+					<a href="#">More Info</a>
+				</div>
+			</div>
+
+
+			<div class="advert">
+				<div class="advert-title">
+					<h4>Advertisement</h4>
+					<a href="#">Close</a>
+				</div>
+				<img src="file:///D:/html%20and%20CSS/Document/project/images/advertisement.png">
+			</div>
+
+
+			<div class="chat">
+				<div class="chat-title">
+					<h4>Conversation</h4>
+					<a href="#">Hide Chat</a>
+				</div>
+
+				<div class="online-list">
+					<div class="online">
+						<img src="file:///D:/html%20and%20CSS/Document/project/images/zubair.jpg">
+						<p>Muhammad Zubair</p>
+					</div>
+				</div>
+
+				<div class="online-list">
+					<div class="online">
+						<img src="file:///D:/html%20and%20CSS/Document/project/images/chachu.jpg">
+						<p>Chachu Shahid</p>
+					</div>
+				</div>
+
+				<div class="online-list">
+					<div class="online">
+						<img src="file:///D:/html%20and%20CSS/Document/project/images/member-1.png">
+						<p>John wick</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<div class="footer">
+		<p>Copyright 2022 - Dilawar Khan -All Rights Reserved</p>
+	</div>
+	<script src="facebook.js">
+		
+	</script>
+
+</body>
+</html>
